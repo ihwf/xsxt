@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/css.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-2.2.1.js"></script>
+    <script src="js/app.js"></script>
+    <title>登录OR注册</title>
+</head>
+<body>
+<div class="container">
+    <div class="dlzcjm table-responsive">
+        <div id="dljm">
+            <form action="control.php?c=dl" method="post" name="form2" id="form2" class="form-horizontal" onkeydown="javascript:if (event.keyCode == 13){return check2();}">
+                <div class="form-group">
+                    <div class="col-sm-push-4" style="text-align: center">
+                        <button type="button" class="dl-zc" id="dljman">登录</button>|<button type="button" class="dl-zc" id="zcjman">注册</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="duser" class="col-sm-4 control-label">用户名:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="请输入用户名" type="text" id="duser" name="duser" onkeyup="value=value.replace(/[^\w]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\w]/g,''))">
+                    </div>
+                </div>
+                <span class="userts"></span>
+                <div class="form-group">
+                    <label for="dpassword" class="col-sm-4 control-label">密码：</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="dpassword" name="dpassword" placeholder="请输入密码">
+                    </div>
+                </div>
+                <span class="mmts"></span>
+
+                <div class="col-sm-push-12" style="text-align: center">
+                    <button type="button" class="btn btn-default" id="dlan">登录</button>
+                    &ensp;
+                    <button type="reset" class="btn btn-default" >重置</button>
+                </div>
+
+
+                <!--<table cellspacing="0" cellpadding="10" width="320px" class="form-border1">-->
+                <!--<tr>-->
+                <!--<td  align="center" colspan="2"><button type="button" class="dl-zc" onclick="dljm()">登录</button>|<button type="button" class="dl-zc" onclick="zcjm()">注册</button></td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td  colspan="2" align="right">用户名:-->
+                <!--<input class="user-text" placeholder="请输入用户名" type="text" id="duser" name="duser" onkeyup="value=value.replace(/[^\w]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\w]/g,''))">&nbsp&nbsp&nbsp&nbsp</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td colspan="2" align="right">密&nbsp&nbsp码:-->
+                <!--<input class="psw-text" type="password" id="dpassword" name="dpassword" placeholder="请输入密码">&nbsp&nbsp&nbsp&nbsp</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td colspan="2" align="center">-->
+                <!--<button type="button" class="btn-success" onclick="check2()">登录</button>&nbsp&nbsp-->
+                <!--<button type="reset"  class="btn-warning">重置</button></td>-->
+                <!--</tr>-->
+                <!--</table>-->
+            </form>
+        </div>
+
+        <div id="zcjm">
+
+            <form action="control.php?c=zc" method="post" name="form1" class="form-horizontal" id="form1"  onkeydown="javascript:if (event.keyCode == 13){return check();}">
+                <div class="form-group">
+                    <div class="col-sm-push-4" style="text-align: center">
+                        <button type="button" class="dl-zc" id="dljman1">登录</button>|<button type="button" class="dl-zc" id="zcjman1">注册</button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="user" class="col-sm-4 control-label">用户名:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" placeholder="请输入字母或数字" type="text" id="user" name="user" onkeyup="value=value.replace(/[^\w]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\w]/g,''))">
+                    </div>
+                </div>
+                <span class="userts"></span>
+                <div class="form-group">
+                    <label for="password" class="col-sm-4 control-label">密码：</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="请输入密码">
+                    </div>
+                </div>
+                <span class="mmts"></span>
+                <div class="form-group">
+                    <label for="repassword" class="col-sm-4 control-label">确认密码:</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="repassword" name="repassword" placeholder="请再次输入密码">
+                    </div>
+                </div>
+                <span class="qmmts"></span>
+                <div class="form-group">
+                    <label for="a_phone" class="col-sm-4 control-label">联系电话:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="a_phone" name="a_phone" placeholder="请输入联系电话">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="a_email" class="col-sm-4 control-label">E-mail:</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" id="a_email" name="a_email" placeholder="请输入E-mail">
+                    </div>
+                </div>
+
+                <div class="col-sm-push-12" style="text-align: center">
+                    <button type="button" class="btn btn-default" id="zcan">注册</button>
+                    &ensp;
+                    <button type="reset" class="btn btn-default" >重置</button>
+                </div>
+
+
+                <!--<table cellspacing="0" cellpadding="10" width="320px" class="form-border1">-->
+                <!--<tr>-->
+                <!--<td  align="center" colspan="2"><button type="button" class="dl-zc" onclick="dljm()">登录</button>|<button type="button" class="dl-zc" onclick="zcjm()">注册</button></td>-->
+                <!--</tr>-->
+                <!--<tr><td>为了安全暂时不允许注册！</td></tr>-->
+                <!--&lt;!&ndash; <tr>-->
+                <!--<td  colspan="2" align="right">用户名:-->
+                <!--<input class="user-text" placeholder="请输入字母或数字" type="text" id="user" name="user" onkeyup="value=value.replace(/[^\w]/g,'') " onbeforepaste="clipboardData.setData('text',clipboardData.getData('text').replace(/[^\w]/g,''))">&nbsp&nbsp&nbsp&nbsp</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td colspan="2" align="right">密&nbsp&nbsp码:-->
+                <!--<input class="psw-text" type="password" id="password" name="password" placeholder="请输入密码">&nbsp&nbsp&nbsp&nbsp</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td colspan="2" align="right">确认密码:-->
+                <!--<input class="psw-text" type="password" id="repassword" name="repassword" placeholder="请再次输入密码">&nbsp&nbsp&nbsp&nbsp</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td colspan="2" align="right">联系电话:-->
+                <!--<input class="psw-text" type="text" id="a_phone" name="a_phone" placeholder="请输入联系电话">&nbsp&nbsp&nbsp&nbsp</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td colspan="2" align="right">E-mail:-->
+                <!--<input class="psw-text" type="text" id="a_email" name="a_email" placeholder="请输入E-mail">&nbsp&nbsp&nbsp&nbsp</td>-->
+                <!--</tr>-->
+
+                <!--<tr>-->
+                <!--<td colspan="2" align="center">-->
+                <!--<button type="button" class="btn-success" onclick="check()">注册</button>&nbsp&nbsp-->
+                <!--<button type="reset"  class="btn-warning">重置</button></td>-->
+                <!--</tr> &ndash;&gt;-->
+                <!--</table>-->
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
